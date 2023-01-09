@@ -1,5 +1,21 @@
 :root {
-    --divider-color: #c7c8d4
+    --divider-color: #c7c8d4;
+    --ff-headings: 'Syne Tactile', cursive;
+    --ff-para: 'Roboto Mono', monospace;
+}
+
+/* Visually hide an element */
+.hidden {
+    opacity: 0;
+}
+  
+/* Hide an element plus effectively remove it from the page */
+.removed {
+    display: none !important;
+}
+
+.fadeable {
+    transition: opacity 1000ms;
 }
 
 body {
@@ -12,12 +28,12 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: 'Syne Tactile', cursive;
+    font-family: var(--ff-headings);
+    margin: 0;
 }
 
-p {
-    font-family: 'Roboto Mono', monospace;
-
+p, a {
+    font-family: var(--ff-para);
 }
 
 .overlay {
@@ -39,9 +55,27 @@ p {
     flex: 1 1 0;
 }
 
-header {
+.sidebar header {
     margin: 10px 0 10px 0;
     text-align: center;
+}
+
+.menu {
+    padding: 0px 10px;
+}
+
+ul {
+    margin: 0;
+    list-style-type: '\25AA';
+    padding: 0 0 0 10px;
+}
+
+ul p, ul a {
+    font-family: var(--ff-headings);
+}
+
+li {
+    padding-left: 10px;
 }
 
 #bio-short {
@@ -60,6 +94,10 @@ header {
     flex: 3 1 0;
 }
 
+.gallery-section {
+    position:absolute;
+}
+
 .gallery-row {
     display: flex;
     margin: 10px;
@@ -69,11 +107,16 @@ header {
 .gallery-element {
     padding: 10px;
     margin: 10px;
-    flex: 3 1 0;
+    /* flex: 3 1 0; */
 }
 
-.hidden {
-    opacity: 0;
+/* There aren't any actual style elements for this yet, its used just as a section ref */
+/* .gallery-section {
+
+} */
+
+.gallery-section header {
+    padding: 0 0 0 10px;
 }
 
 body {
