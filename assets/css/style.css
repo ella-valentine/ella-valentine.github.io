@@ -1,18 +1,36 @@
-@font-face {
-    font-family: "syne";
-    src: local("Syne"), 
-        url("/asserts/fonts/SyneTactile-Regular") format("truetype")
-}
-
 :root {
     --divider-color: #c7c8d4
 }
 
-#top {
+body {
+    margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Syne Tactile', cursive;
+}
+
+p {
+    font-family: 'Roboto Mono', monospace;
+
+}
+
+.container {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: auto;
+}
+
+.sidebar {
+	/* position: fixed;
+	top: 0;
+	left: 0;
+	max-width: 15%;
+	height: 100%; */
+    flex: 1 1 0;
 }
 
 header {
@@ -21,14 +39,19 @@ header {
 }
 
 #bio-short {
-    text-align: center;
-    width: 50%;
+	/* width: 50%; */
+	text-align: justify;
+	text-justify: auto;
+	padding-left: 10px;
+	padding-right: 10px;
 }
 
 #gallery {
-    display: flex;
-    flex-direction: column;
-    margin: 0 15% 0 15%;
+	display: flex;
+	flex-direction: column;
+	/* margin-left: 25%;
+	width: 75%; */
+    flex: 3 1 0;
 }
 
 .gallery-row {
@@ -40,8 +63,7 @@ header {
 .gallery-element {
     padding: 10px;
     margin: 10px;
-    flex: 33%;
-    text-align: center;
+    flex: 3 1 0;
 }
 
 .hidden {
