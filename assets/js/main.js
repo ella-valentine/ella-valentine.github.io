@@ -10,6 +10,8 @@ const defaultOpacityTransitionLength = 1000;
 const defaultRemoveFromDomDelay = 50;
 const defaultFadeInDelay = 150;
 
+var sidebarOpen = false;
+
 const fadeOut = (elem, opacityTransitionLength, removeFromDomDelay) => {
 
     var otl = opacityTransitionLength ?? defaultOpacityTransitionLength
@@ -54,20 +56,22 @@ function setupRouter() {
         closeModal();
         fadeOut(shownPage, 500, 10);
         fadeIn(elem, 510, 10);
+        sidebarOpen = false;
     })
 }
 
 function setupSidebarButtons() {
 
-    var sidebarOpen = false;
 
     $("#sidebar-control").on("click", function (e) {
 
 
         if (!sidebarOpen) {
-            openModal()
+            openModal();
+            sidebarOpen = true;
         } else {
             closeModal();
+            sidebarOpen = false;
         }
 
         // $(".sidebar-overlay").removeClass("hidden");
@@ -82,7 +86,6 @@ function openModal() {
     shown.addClass("hidden");
     $(".sidebar-content").removeClass("tray-hidden");
     fadeIn($(".sidebar-overlay"), 0, 20);
-    sidebarOpen = true;
 }
 
 function closeModal() {
@@ -93,5 +96,4 @@ function closeModal() {
     shown.addClass("hidden");
     $(".sidebar-content").addClass("tray-hidden");
     fadeOut($(".sidebar-overlay"), 500, 20);
-    sidebarOpen = false;
 }

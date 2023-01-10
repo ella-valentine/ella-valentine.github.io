@@ -90,7 +90,7 @@ p {
     width: 100vw;
     background-color: black;
     top: 0;
-    opacity: 75%;
+    opacity: 50%;
     transition: var(--opacity-500ms); 
 }
 
