@@ -62,23 +62,13 @@ p {
     padding: 0 6em;
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 750px) {
     .container {
         padding: 0 1em;
     }
 }
 .sidebar {
-	/* position: fixed;
-	top: 0;
-	left: 0;
-	max-width: 15%;
-	height: 100%; */
-    flex: 1 1 0;
-}
 
-.sidebar header {
-    margin: 10px 0 10px 0;
-    text-align: center;
 }
 
 .menu {
@@ -136,6 +126,7 @@ li {
     /* margin-left: auto;
     margin-right: auto; */
     margin: 20px auto;
+    min-width: 100%;
 }
 
 /* There aren't any actual style elements for this yet, its used just as a section ref */
