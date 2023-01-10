@@ -31,6 +31,8 @@ function setupRouter() {
     $(".routable li a").on('click', function(e) {
         e.preventDefault();
 
+        // this.hash is the `#value` portion of the `a` element
+        // which conveniently is also a jquery selector
         const query = this.hash;
         const elem = $(query);
         if (!elem.length) {
@@ -43,6 +45,6 @@ function setupRouter() {
         }
 
         fadeOut(shownPage);
-        fadeIn(elem, fadeInDelay);
+        fadeIn(elem);
     })
 }
