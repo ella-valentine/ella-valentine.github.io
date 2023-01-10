@@ -1,7 +1,8 @@
 $(document).ready(init)
 
 function init() {
-    // $("body").removeClass("hidden");
+    $("body").removeClass("hidden");
+    
     setupRouter();
     setupSidebarButtons();
 }
