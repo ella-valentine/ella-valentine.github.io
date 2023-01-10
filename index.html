@@ -18,24 +18,33 @@
     <link rel="stylesheet" href="/assets/css/style.css">
 </head>
 <body>
+    <!-- TODO fix and position this -->
     <div class="sidebar">
-        <nav class="menu">
-            <!-- <div id="works"> -->
+        <div class="sidebar-content tray tray-hidden">
+            <nav class="menu">
                 <h1>works</h1>
-            <!-- </div> -->
-            <ul class="routable">
-              <li><a href="#wsrb">wishing sweet rhythm back</a></li>
-              <li><a href="#tc">the corridor</a></li>
-              <li><a href="#">studio works 2018-2023</a></li>
-            </ul>
-        </nav>
+                <ul class="routable">
+                    <li><a href="#wsrb">wishing sweet rhythm back</a></li>
+                    <li><a href="#tc">the corridor</a></li>
+                    <li><a href="#">studio works 2018-2023</a></li>
+                </ul>
+            </nav>
+        </div>
     </div>
-    <div class="sidebar-overlay"></div>
+    <div class="sidebar-overlay hidden removed"></div>
     <div class="overlay">
         <!-- <h1 style="margin: 0 0 0 0 !important">
         E V B    
         </h1> -->
         <img class="logo" src="/assets/images/logo.png">
+        <button id="sidebar-control">
+            <svg class="hamburger" viewBox="0 0 24 24">
+                <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path>
+            </svg>
+            <svg class="close hidden" viewBox="0 0 24 24">
+                <path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"></path>
+            </svg>
+        </button>
     </div>
     <div class="overlay-spacing"></div>
     <div class="container">
