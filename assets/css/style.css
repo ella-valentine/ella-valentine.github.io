@@ -169,7 +169,7 @@ nav {
 }
 
 nav h1 {
-    font-size: 4.5rem;
+    font-size: 4.5em;
     margin: 10px 0;
 }
 
@@ -197,7 +197,7 @@ ul {
 }
 
 li {
-    font-size: 1.5rem;
+    font-size: 1.5em;
 }
 
 #bio-short {
@@ -301,5 +301,9 @@ hr {
     #sidebar-control {    
         right: 1rem;
         margin: 0;
+    }
+
+    nav {
+        font-size: 0.8em;
     }
 }

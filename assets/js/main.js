@@ -4,7 +4,7 @@ function init() {
     $("body").removeClass("hidden");
     
     setupRouter();
-    setupSidebarButtons();
+    setupSidebar();
 }
 
 const defaultOpacityTransitionLength = 1000;
@@ -71,7 +71,7 @@ function _routerInner(e, self) {
     fadeIn(elem, 510, 10);
 }
 
-function setupSidebarButtons() {
+function setupSidebar() {
 
     $("#sidebar-control").on("click", function (e) {
 
@@ -80,6 +80,11 @@ function setupSidebarButtons() {
         } else {
             closeSidebar();
         }
+    })
+
+    $(".sidebar-overlay").on("click", function (e) {
+
+        closeSidebar();
     })
 }
 
