@@ -49,6 +49,11 @@ function setupRouter() {
     })
 }
 
+const scrollToOptions = { 
+    // behavior: "smooth", 
+    block: "nearest" 
+};
+
 function _routerInner(e, self) {
     e.preventDefault();
 
@@ -59,9 +64,11 @@ function _routerInner(e, self) {
     if (!elem.length) {
         return
     }
+    const elemHeader = elem.find("h1"); 
 
     const shownPage = $(".gallery-section:not(.hidden.removed)")
     if (shownPage.is(elem)) {
+        scrollToIfNotVisible(elemHeader);
         closeSidebar();
         return;
     }
@@ -69,6 +76,17 @@ function _routerInner(e, self) {
     closeSidebar();
     fadeOut(shownPage, 500, 10);
     fadeIn(elem, 510, 10);
+    setTimeout(() => {scrollToIfNotVisible(elemHeader)}, 515);
+}
+
+function scrollToIfNotVisible(elem) {
+
+    if (!externals.isElementInViewport(elem)) {
+        const domElem = elem.get(0);
+        const relativePosition = domElem.getBoundingClientRect();
+        const headerHeight = document.querySelector(".overlay").getBoundingClientRect().height;
+        document.documentElement.scrollBy(relativePosition.x, relativePosition.y - headerHeight - headerHeight / 10);
+    }
 }
 
 function setupSidebar() {
@@ -114,4 +132,24 @@ function closeSidebar() {
     fadeOut($(".sidebar-overlay"), 500, 20);
 
     sidebarOpen = false;
+}
+
+const externals = {
+
+    isElementInViewport: (el) => {
+
+        // Special bonus for those using jQuery
+        if (el instanceof jQuery) {
+            el = el[0];
+        }
+    
+        var rect = el.getBoundingClientRect();
+    
+        return (
+            rect.top >= 0 &&
+            rect.left >= 0 &&
+            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) && /* or $(window).height() */
+            rect.right <= (window.innerWidth || document.documentElement.clientWidth) /* or $(window).width() */
+        );
+    }
 }
