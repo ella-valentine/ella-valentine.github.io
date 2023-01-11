@@ -18,7 +18,6 @@
     <link rel="stylesheet" href="/assets/css/style.css">
 </head>
 <body class="hidden">
-    <!-- TODO fix and position this -->
     <div class="sidebar">
         <div class="sidebar-content tray tray-hidden">
             <nav class="menu">
@@ -30,11 +29,16 @@
                         <li><a href="#studio">studio works 2018-2023</a></li>
                     </ul>
                 </div>
-                <h1 id="cv">
-                    <a href="/assets/CV-January-2023.pdf" target="_blank">
+                <a href="/assets/CV-January-2023.pdf" target="_blank">
+                    <h1 id="cv">
                         curric. vitae
-                    </a>
-                </h1>
+                    </h1>
+                </a>
+                <a href="#bio-full" class="routable">
+                    <h1 id="bio">
+                        bio
+                    </h1>
+                </a>
             </nav>
             <footer>
                 <p>
@@ -45,9 +49,6 @@
     </div>
     <div class="sidebar-overlay hidden removed"></div>
     <div class="overlay">
-        <!-- <h1 style="margin: 0 0 0 0 !important">
-        E V B    
-        </h1> -->
         <img class="logo" src="/assets/images/logo.png">
         <button id="sidebar-control">
             <svg class="hamburger" viewBox="0 0 24 24">
@@ -60,15 +61,16 @@
     </div>
     <div class="overlay-spacing"></div>
     <div class="container">
-        <section id="bio">
+        <section id="basic-bio">
             <p>
-                Ella Valentine Bunker (she/they) is an artist living and working in Boorloo. They produce most of their work at Light Works in the CBD. 
+                Ella Valentine Bunker (she/they) is an artist living and working in Boorloo. 
+                <!-- They produce most of their work at Light Works in the CBD. 
                 <br>
                 Their practice consists of sculpture and painting works with agar jelly, glue based slime, wire, cakes, seeds, clay and found objects. 
                 <br>
                 Ella's work is intrinsically linked to their mental illness, with its formal qualities often derived from the visual and aural phenomena they experience. 
                 <br>
-                Their work concerns embodiment, attempting to reconcile the mess and rot of the physical world with the absolute domain of the mental; impressions are realised playfully, but with the transience of their organic material always foregrounded.
+                Their work concerns embodiment, attempting to reconcile the mess and rot of the physical world with the absolute domain of the mental; impressions are realised playfully, but with the transience of their organic material always foregrounded. -->
             </p>
         </section>
         <div id="gallery">
@@ -142,7 +144,7 @@
             </div>
             <div id="studio" class="gallery-section fadeable hidden removed">
                 <header class="gallery-element">
-                    <h1>the corridor</h1>
+                    <h1>studio works 2018-2023</h1>
                     <p>
                         TODO: Add text.
                         <br>
@@ -214,6 +216,17 @@
                     <img src="/assets/images/studio/studio-16.jpg">
                     <div class="description"><p>watercolour on pillow</p></div>
                 </section>
+            </div>
+            <div id="bio-full"  class="gallery-section fadeable hidden removed">
+                <p>
+                    They produce most of their work at Light Works in the CBD. 
+                    <br>
+                    Their practice consists of sculpture and painting works with agar jelly, glue based slime, wire, cakes, seeds, clay and found objects. 
+                    <br>
+                    Ella's work is intrinsically linked to their mental illness, with its formal qualities often derived from the visual and aural phenomena they experience. 
+                    <br>
+                    Their work concerns embodiment, attempting to reconcile the mess and rot of the physical world with the absolute domain of the mental; impressions are realised playfully, but with the transience of their organic material always foregrounded.
+                </p>
             </div>
         </div>
     </div>

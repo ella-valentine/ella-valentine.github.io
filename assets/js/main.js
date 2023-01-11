@@ -39,26 +39,36 @@ const fadeIn = (elem, fadeInDelay, removeFromDomDelay) => {
 
 function setupRouter() {
     $(".routable li a").on('click', function(e) {
-        e.preventDefault();
-
-        // this.hash is the `#value` portion of the `a` element
-        // which conveniently is also a jquery selector
-        const query = this.hash;
-        const elem = $(query);
-        if (!elem.length) {
-            return
-        }
-
-        const shownPage = $(".gallery-section:not(.hidden.removed)")
-        if (shownPage.is(elem)) {
-            return;
-        }
-
-        closeModal();
-        fadeOut(shownPage, 500, 10);
-        fadeIn(elem, 510, 10);
-        sidebarOpen = false;
+        
+        _routerInner(e, this);
     })
+    
+    $("a.routable").on('click', function(e) {
+        
+        _routerInner(e, this);
+    })
+}
+
+function _routerInner(e, self) {
+    e.preventDefault();
+
+    // this.hash is the `#value` portion of the `a` element
+    // which conveniently is also a jquery selector
+    const query = self.hash;
+    const elem = $(query);
+    if (!elem.length) {
+        return
+    }
+
+    const shownPage = $(".gallery-section:not(.hidden.removed)")
+    if (shownPage.is(elem)) {
+        return;
+    }
+
+    closeModal();
+    fadeOut(shownPage, 500, 10);
+    fadeIn(elem, 510, 10);
+    sidebarOpen = false;
 }
 
 function setupSidebarButtons() {
