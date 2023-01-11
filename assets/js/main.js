@@ -62,49 +62,51 @@ function _routerInner(e, self) {
 
     const shownPage = $(".gallery-section:not(.hidden.removed)")
     if (shownPage.is(elem)) {
+        closeSidebar();
         return;
     }
 
-    closeModal();
+    closeSidebar();
     fadeOut(shownPage, 500, 10);
     fadeIn(elem, 510, 10);
-    sidebarOpen = false;
 }
 
 function setupSidebarButtons() {
 
-
     $("#sidebar-control").on("click", function (e) {
 
-
         if (!sidebarOpen) {
-            openModal();
-            sidebarOpen = true;
+            openSidebar();
         } else {
-            closeModal();
-            sidebarOpen = false;
+            closeSidebar();
         }
-
-        // $(".sidebar-overlay").removeClass("hidden");
     })
 }
 
-function openModal() {
+function openSidebar() {
 
     var hidden = $("svg.hidden");
     var shown = $("svg:not(.hidden)")
     hidden.removeClass("hidden")
     shown.addClass("hidden");
+
+    // Show the tray and show the 'fadeout' black overlay
     $(".sidebar-content").removeClass("tray-hidden");
     fadeIn($(".sidebar-overlay"), 0, 20);
+
+    sidebarOpen = true;
 }
 
-function closeModal() {
+function closeSidebar() {
 
     var hidden = $("svg.hidden");
     var shown = $("svg:not(.hidden)")
     hidden.removeClass("hidden")
     shown.addClass("hidden");
+
+    // Hide the tray and the black overlay
     $(".sidebar-content").addClass("tray-hidden");
     fadeOut($(".sidebar-overlay"), 500, 20);
+
+    sidebarOpen = false;
 }

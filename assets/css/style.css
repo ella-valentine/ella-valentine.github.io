@@ -70,6 +70,7 @@ a:visited {
 }
 
 a:hover {
+    padding: 0;
     border-bottom: 1px solid;
     background: var(--color-bg-link-focused);
 }
@@ -172,9 +173,8 @@ nav h1 {
     margin: 10px 0;
 }
 
-nav p, nav a {
+nav a {
     font-family: var(--ff-headings);
-    font-size: 1.5rem;
 }
 
 #works h1 {
@@ -197,7 +197,7 @@ ul {
 }
 
 li {
-    padding: 0;
+    font-size: 1.5rem;
 }
 
 #bio-short {
@@ -279,6 +279,17 @@ footer {
 footer p, footer a {
     text-align: center;
     font-family: var(--ff-headings);
+}
+
+nav h2 {
+    margin: 10px 0;
+    font-size: 2.5rem;
+}
+
+hr {
+    border-style: groove;
+    width: 80%;
+    border-color: #e0eafe;
 }
 
 
